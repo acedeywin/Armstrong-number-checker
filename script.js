@@ -3,8 +3,6 @@
 //Wrap all codes in an Immediately Invoked Function Expression (IIFE).
 (() => {
 
-let invalidClicks = 0;
-
 const armstrongNumberChecker = () => {
     
     //Initialize variable that will be used throughout the code.
@@ -17,6 +15,12 @@ const armstrongNumberChecker = () => {
 
           //Get the cube root and add the value.
           newValue = toArray.map(a =>  a ** 3).reduce((a, b) => a + b);
+
+     //error message for wrong input   
+    if (userValue > 99 || userValue <= 999) {
+         message.innerText = 'Your input is invalid. Please enter a 3-digit number.';
+         //btn.disabled = true;
+    } 
     
     //Check to make sure the user input is a 3-digit number.
     if(userValue > 99 && userValue <= 999){
@@ -25,29 +29,16 @@ const armstrongNumberChecker = () => {
         if(newValue == userValue){
 
     //(Math.pow(toArray[0], 3) + Math.pow(toArray[1], 3) + Math.pow(toArray[2], 3) == userValue)
-
+        //btn.disabled = false;
         message.innerText = 'Yes! ' + userValue + ' is an Armstrong Number.';
         }else{
 
         message.innerText = 'No! ' + userValue + ' is not an Armstrong Number. Check another Number.';
         }
     }
-    //Deactivate the button for invalid inputs.
-    else if (userValue <= 99 || userValue > 999) {
-        clicks();
-    }  
+    
 };
 
-const clicks = () => {
-
-    invalidClicks++;    
-    if(invalidClicks == 1){
-        btn.disabled = true;
-    }else{
-        message.innerText = 'Your input is invalid. Please enter a 3-digit number.';
-        btn.disabled = false;
-    } 
-} 
 
 //Listen for button click event and execute the code.
 const check = () => {
