@@ -30,10 +30,10 @@ const armstrongNumberChecker = () => {
 
     //(Math.pow(toArray[0], 3) + Math.pow(toArray[1], 3) + Math.pow(toArray[2], 3) == userValue)
         //btn.disabled = false;
-        message.innerText = 'Yes! ' + userValue + ' is an Armstrong Number.';
+        message.innerText = `Yes! ${userValue} is an Armstrong Number.`;
         }else{
 
-        message.innerText = 'No! ' + userValue + ' is not an Armstrong Number. Check another Number.';
+        message.innerText = `No! ${userValue} is not an Armstrong Number. Check another Number.`;
         }
     }
     
